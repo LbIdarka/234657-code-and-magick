@@ -1,19 +1,22 @@
 'use strict';
 
-window.renderStatistics = function(ctx) {
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
-  ctx.beginPath();
-  ctx.ellipse(160, 160, 80, 140, 10, 0, Math.PI * 2, false);
-  ctx.ellipse(270, 160, 110, 140, 10, 0, Math.PI * 2, false);
-  ctx.ellipse(380, 160, 110, 140, 10, 0, Math.PI * 2, false);
-  ctx.ellipse(490, 160, 80, 140, 10, 0, Math.PI * 2, false);
-  ctx.fill();
+var ROTATION = 10;
+var START_ANGLE = 0;
+var END_ANGLE = Math.PI * 2;
+var ANTICLOCWISE = false;
 
-  ctx.fillStyle = '#fff';
-  ctx.beginPath();
-  ctx.ellipse(150, 150, 80, 140, 10, 0, Math.PI * 2, false);
-  ctx.ellipse(260, 150, 110, 140, 10, 0, Math.PI * 2, false);
-  ctx.ellipse(370, 150, 110, 140, 10, 0, Math.PI * 2, false);
-  ctx.ellipse(480, 150, 80, 140, 10, 0, Math.PI * 2, false);
-  ctx.fill();
-}
+var renderCloud = function (ctx, x, y, radiusY, color) {
+  ctx.fillStyle = color;
+  for (var i = 0; i < 4; i++) {
+    ctx.beginPath();
+    x = x + 110;
+    var radiusX = radiusY - 20;
+    ctx.ellipse(x, y, radiusX, radiusY, ROTATION, START_ANGLE, END_ANGLE, ANTICLOCWISE);
+    ctx.fill();
+  }
+};
+
+window.renderStatistics = function (ctx) {
+  renderCloud(ctx, 70, 140, 120, 'rgba(0, 0, 0, 0.3)');
+  renderCloud(ctx, 60, 130, 120, '#fff');
+};
