@@ -1,22 +1,22 @@
 'use strict';
 
-var RADIUS_X = 115;
-var RADIUS_Y = 145;
-var ROTATION = 10;
-var START_ANGLE = 0;
-var END_ANGLE = Math.PI * 2;
-var ANTICLOCWISE = false;
-var CLOUD_X = 100;
-var CLOUD_Y = 10;
-var GAP = 50;
-var BAR_WIDTH = 40;
-var BAR_HEIGHT = 150;
-var FONT_GAP = 16;
-var TEXT_HEIGHT = 30;
-var USER_BAR_COLOR = 'rgba(255, 0, 0, 1)';
-var textFont = '16 px PT Mono';
-
 (function () {
+  var RADIUS_X = 115;
+  var RADIUS_Y = 145;
+  var ROTATION = 10;
+  var START_ANGLE = 0;
+  var END_ANGLE = Math.PI * 2;
+  var ANTICLOCWISE = false;
+  var CLOUD_X = 100;
+  var CLOUD_Y = 10;
+  var GAP = 50;
+  var BAR_WIDTH = 40;
+  var BAR_HEIGHT = 150;
+  var FONT_GAP = 16;
+  var TEXT_HEIGHT = 30;
+  var USER_BAR_COLOR = 'rgba(255, 0, 0, 1)';
+  var textFont = '16 px PT Mono';
+
   var renderCloud = function (ctx, x, y, color) {
     ctx.fillStyle = color;
     for (var i = 0; i < 4; i++) {
