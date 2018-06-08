@@ -16,20 +16,17 @@
     .content
     .querySelector('.setup-similar-item');
 
-  var getWizards = function () {
-    var wizards = [];
-    for (var i = 0; i < 4; i++) {
-      var wizard = {
-        name: WIZARD_NAMES[Math.floor(Math.random() * WIZARD_NAMES.length)] + ' ' + WIZARD_SURNAMES[Math.floor(Math.random() * WIZARD_SURNAMES.length)],
-        coatColor: WIZARD_COAT[Math.floor(Math.random() * WIZARD_COAT.length)],
-        eyesColor: WIZARD_EYES[Math.floor(Math.random() * WIZARD_EYES.length)]
-      };
-      wizards.push(wizard);
-    }
-    return wizards;
-  };
 
-  var wizards = getWizards();
+  var wizards = [];
+  for (var j = 0; j < 4; j++) {
+    var wizardQ = {
+      name: WIZARD_NAMES[Math.floor(Math.random() * WIZARD_NAMES.length)] + ' ' + WIZARD_SURNAMES[Math.floor(Math.random() * WIZARD_SURNAMES.length)],
+      coatColor: WIZARD_COAT[Math.floor(Math.random() * WIZARD_COAT.length)],
+      eyesColor: WIZARD_EYES[Math.floor(Math.random() * WIZARD_EYES.length)]
+    };
+    wizards.push(wizardQ);
+  }
+
 
   var renderWizard = function (wizard) {
     var wizardElement = similarWizardTemplate.cloneNode(true);
