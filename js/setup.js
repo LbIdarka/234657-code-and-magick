@@ -16,13 +16,16 @@
     .content
     .querySelector('.setup-similar-item');
 
+  var getRandomSetting = function (settings) {
+    return settings[Math.floor(Math.random() * settings.length)];
+  };
 
   var wizards = [];
   for (var j = 0; j < 4; j++) {
     var wizardQ = {
-      name: WIZARD_NAMES[Math.floor(Math.random() * WIZARD_NAMES.length)] + ' ' + WIZARD_SURNAMES[Math.floor(Math.random() * WIZARD_SURNAMES.length)],
-      coatColor: WIZARD_COAT[Math.floor(Math.random() * WIZARD_COAT.length)],
-      eyesColor: WIZARD_EYES[Math.floor(Math.random() * WIZARD_EYES.length)]
+      name: getRandomSetting(WIZARD_NAMES) + ' ' + getRandomSetting(WIZARD_SURNAMES),
+      coatColor: getRandomSetting(WIZARD_COAT),
+      eyesColor: getRandomSetting(WIZARD_EYES)
     };
     wizards.push(wizardQ);
   }
