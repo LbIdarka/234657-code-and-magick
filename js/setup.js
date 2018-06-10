@@ -46,8 +46,10 @@
 
   var addSimilarWizards = function () {
     var fragment = document.createDocumentFragment();
-    for (var i = 0; i < getSimilarWizars().length; i++) {
-      fragment.appendChild(renderWizard(getSimilarWizars()[i]));
+    var similarWizards = getSimilarWizars();
+
+    for (var i = 0; i < similarWizards.length; i++) {
+      fragment.appendChild(renderWizard(similarWizards[i]));
     }
     return similarListElement.appendChild(fragment);
   };
